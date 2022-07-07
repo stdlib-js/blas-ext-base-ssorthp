@@ -53,7 +53,9 @@ If no recognized module system is present, access bundle contents via the global
 ```html
 <script type="text/javascript">
 (function () {
+(function () {
     window.ssorthp;
+})();
 })();
 </script>
 ```
@@ -172,6 +174,7 @@ ssorthp.ndarray( 3, 1.0, x, 1, x.length-3 );
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ssorthp@umd/browser.js"></script>
 <script type="text/javascript">
 (function () {
+(function () {
 
 var rand;
 var sign;
@@ -194,6 +197,7 @@ console.log( x );
 ssorthp( x.length, -1.0, x, -1 );
 console.log( x );
 
+})();
 })();
 </script>
 </body>
@@ -302,7 +306,7 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/blas-ext-base-ssorthp/main/LICENSE
 
-[@stdlib/array/float32]: https://github.com/stdlib-js/array-float32/tree/umd
+[@stdlib/array/float32]: https://github.com/stdlib-js/array-float32/tree/umd/tree/umd
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
@@ -312,11 +316,11 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/blas/ext/base/dsorthp]: https://github.com/stdlib-js/blas-ext-base-dsorthp/tree/umd
+[@stdlib/blas/ext/base/dsorthp]: https://github.com/stdlib-js/blas-ext-base-dsorthp/tree/umd/tree/umd
 
-[@stdlib/blas/ext/base/gsorthp]: https://github.com/stdlib-js/blas-ext-base-gsorthp/tree/umd
+[@stdlib/blas/ext/base/gsorthp]: https://github.com/stdlib-js/blas-ext-base-gsorthp/tree/umd/tree/umd
 
-[@stdlib/blas/ext/base/ssort2hp]: https://github.com/stdlib-js/blas-ext-base-ssort2hp/tree/umd
+[@stdlib/blas/ext/base/ssort2hp]: https://github.com/stdlib-js/blas-ext-base-ssort2hp/tree/umd/tree/umd
 
 <!-- </related-links> -->
 
