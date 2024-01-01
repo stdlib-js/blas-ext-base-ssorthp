@@ -21,7 +21,7 @@
 // MODULES //
 
 var resolve = require( 'path' ).resolve;
-var bench = require( '@stdlib/bench' );
+var bench = require( '@stdlib/bench-harness' );
 var discreteUniform = require( '@stdlib/random-base-discrete-uniform' ).factory;
 var isnanf = require( '@stdlib/math-base-assert-is-nanf' );
 var pow = require( '@stdlib/math-base-special-pow' );
