@@ -35,14 +35,30 @@ limitations under the License.
 
 > Sort a single-precision floating-point strided array using heapsort.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/blas-ext-base-ssorthp
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import ssorthp from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ssorthp@deno/mod.js';
+var ssorthp = require( '@stdlib/blas-ext-base-ssorthp' );
 ```
 
 #### ssorthp( N, order, x, stride )
@@ -50,7 +66,7 @@ import ssorthp from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ssorthp
 Sorts a single-precision floating-point strided array `x` using heapsort.
 
 ```javascript
-import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@deno/mod.js';
+var Float32Array = require( '@stdlib/array-float32' );
 
 var x = new Float32Array( [ 1.0, -2.0, 3.0, -4.0 ] );
 
@@ -68,8 +84,8 @@ The function has the following parameters:
 The `N` and `stride` parameters determine which elements in `x` are accessed at runtime. For example, to sort every other element
 
 ```javascript
-import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@deno/mod.js';
-import floor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-floor@deno/mod.js';
+var Float32Array = require( '@stdlib/array-float32' );
+var floor = require( '@stdlib/math-base-special-floor' );
 
 var x = new Float32Array( [ 1.0, -2.0, 3.0, -4.0 ] );
 var N = floor( x.length / 2 );
@@ -81,8 +97,8 @@ ssorthp( N, -1.0, x, 2 );
 Note that indexing is relative to the first index. To introduce an offset, use [`typed array`][mdn-typed-array] views.
 
 ```javascript
-import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@deno/mod.js';
-import floor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-floor@deno/mod.js';
+var Float32Array = require( '@stdlib/array-float32' );
+var floor = require( '@stdlib/math-base-special-floor' );
 
 // Initial array...
 var x0 = new Float32Array( [ 1.0, 2.0, 3.0, 4.0 ] );
@@ -101,7 +117,7 @@ ssorthp( N, -1.0, x1, 2 );
 Sorts a single-precision floating-point strided array `x` using heapsort and alternative indexing semantics.
 
 ```javascript
-import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@deno/mod.js';
+var Float32Array = require( '@stdlib/array-float32' );
 
 var x = new Float32Array( [ 1.0, -2.0, 3.0, -4.0 ] );
 
@@ -116,7 +132,7 @@ The function has the following additional parameters:
 While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying `buffer`, the `offset` parameter supports indexing semantics based on a starting index. For example, to access only the last three elements of `x`
 
 ```javascript
-import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@deno/mod.js';
+var Float32Array = require( '@stdlib/array-float32' );
 
 var x = new Float32Array( [ 1.0, -2.0, 3.0, -4.0, 5.0, -6.0 ] );
 
@@ -150,10 +166,10 @@ ssorthp.ndarray( 3, 1.0, x, 1, x.length-3 );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import round from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@deno/mod.js';
-import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@deno/mod.js';
-import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@deno/mod.js';
-import ssorthp from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ssorthp@deno/mod.js';
+var round = require( '@stdlib/math-base-special-round' );
+var randu = require( '@stdlib/random-base-randu' );
+var Float32Array = require( '@stdlib/array-float32' );
+var ssorthp = require( '@stdlib/blas-ext-base-ssorthp' );
 
 var rand;
 var sign;
@@ -219,7 +235,7 @@ console.log( x );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -279,7 +295,7 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/blas-ext-base-ssorthp/main/LICENSE
 
-[@stdlib/array/float32]: https://github.com/stdlib-js/array-float32/tree/deno
+[@stdlib/array/float32]: https://github.com/stdlib-js/array-float32
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
@@ -289,11 +305,11 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/blas/ext/base/dsorthp]: https://github.com/stdlib-js/blas-ext-base-dsorthp/tree/deno
+[@stdlib/blas/ext/base/dsorthp]: https://github.com/stdlib-js/blas-ext-base-dsorthp
 
-[@stdlib/blas/ext/base/gsorthp]: https://github.com/stdlib-js/blas-ext-base-gsorthp/tree/deno
+[@stdlib/blas/ext/base/gsorthp]: https://github.com/stdlib-js/blas-ext-base-gsorthp
 
-[@stdlib/blas/ext/base/ssort2hp]: https://github.com/stdlib-js/blas-ext-base-ssort2hp/tree/deno
+[@stdlib/blas/ext/base/ssort2hp]: https://github.com/stdlib-js/blas-ext-base-ssort2hp
 
 <!-- </related-links> -->
 
