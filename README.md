@@ -42,7 +42,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import ssorthp from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ssorthp@deno/mod.js';
+import ssorthp from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ssorthp@v0.2.0-deno/mod.js';
 ```
 
 #### ssorthp( N, order, x, stride )
@@ -153,7 +153,7 @@ ssorthp.ndarray( 3, 1.0, x, 1, x.length-3 );
 import round from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@deno/mod.js';
 import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@deno/mod.js';
 import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@deno/mod.js';
-import ssorthp from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ssorthp@deno/mod.js';
+import ssorthp from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ssorthp@v0.2.0-deno/mod.js';
 
 var rand;
 var sign;
