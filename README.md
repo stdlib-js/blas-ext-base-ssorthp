@@ -35,43 +35,37 @@ limitations under the License.
 
 > Sort a single-precision floating-point strided array using heapsort.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/blas-ext-base-ssorthp
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-ssorthp = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ssorthp@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var ssorthp = require( 'path/to/vendor/umd/blas-ext-base-ssorthp/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ssorthp@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.ssorthp;
-})();
-</script>
+var ssorthp = require( '@stdlib/blas-ext-base-ssorthp' );
 ```
 
 #### ssorthp( N, order, x, stride )
 
-Sorts a single-precision floating-point strided array `x` using heapsort.
+Sorts a single-precision floating-point strided array using heapsort.
 
 ```javascript
 var Float32Array = require( '@stdlib/array-float32' );
@@ -89,16 +83,14 @@ The function has the following parameters:
 -   **x**: input [`Float32Array`][@stdlib/array/float32].
 -   **stride**: index increment.
 
-The `N` and `stride` parameters determine which elements in `x` are accessed at runtime. For example, to sort every other element
+The `N` and stride parameters determine which elements in the strided arrays are accessed at runtime. For example, to sort every other element
 
 ```javascript
 var Float32Array = require( '@stdlib/array-float32' );
-var floor = require( '@stdlib/math-base-special-floor' );
 
 var x = new Float32Array( [ 1.0, -2.0, 3.0, -4.0 ] );
-var N = floor( x.length / 2 );
 
-ssorthp( N, -1.0, x, 2 );
+ssorthp( 2, -1.0, x, 2 );
 // x => <Float32Array>[ 3.0, -2.0, 1.0, -4.0 ]
 ```
 
@@ -106,23 +98,21 @@ Note that indexing is relative to the first index. To introduce an offset, use [
 
 ```javascript
 var Float32Array = require( '@stdlib/array-float32' );
-var floor = require( '@stdlib/math-base-special-floor' );
 
 // Initial array...
 var x0 = new Float32Array( [ 1.0, 2.0, 3.0, 4.0 ] );
 
 // Create an offset view...
-var x1 = new Float32Array( x0.buffer, x0.BYTES_PER_ELEMENT*1 ); // start at 2nd element
-var N = floor( x0.length/2 );
+var x1 = new Float32Array( x0.buffer, x0.BYTES_PER_ELEMENT*1 );
 
 // Sort every other element...
-ssorthp( N, -1.0, x1, 2 );
+ssorthp( 2, -1.0, x1, 2 );
 // x0 => <Float32Array>[ 1.0, 4.0, 3.0, 2.0 ]
 ```
 
 #### ssorthp.ndarray( N, order, x, stride, offset )
 
-Sorts a single-precision floating-point strided array `x` using heapsort and alternative indexing semantics.
+Sorts a single-precision floating-point strided array using heapsort and alternative indexing semantics.
 
 ```javascript
 var Float32Array = require( '@stdlib/array-float32' );
@@ -137,7 +127,7 @@ The function has the following additional parameters:
 
 -   **offset**: starting index.
 
-While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying `buffer`, the `offset` parameter supports indexing semantics based on a starting index. For example, to access only the last three elements of `x`
+While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying `buffer`, the `offset` parameter supports indexing semantics based on a starting index. For example, to access only the last three elements of the strided array
 
 ```javascript
 var Float32Array = require( '@stdlib/array-float32' );
@@ -156,7 +146,7 @@ ssorthp.ndarray( 3, 1.0, x, 1, x.length-3 );
 
 ## Notes
 
--   If `N <= 0` or `order == 0.0`, both functions return `x` unchanged.
+-   If `N <= 0` or `order == 0.0`, both functions return the strided array unchanged.
 -   The algorithm distinguishes between `-0` and `+0`. When sorted in increasing order, `-0` is sorted before `+0`. When sorted in decreasing order, `-0` is sorted after `+0`.
 -   The algorithm sorts `NaN` values to the end. When sorted in increasing order, `NaN` values are sorted last. When sorted in decreasing order, `NaN` values are sorted first.
 -   The algorithm has space complexity `O(1)` and time complexity `O(N log2 N)`.
@@ -173,42 +163,18 @@ ssorthp.ndarray( 3, 1.0, x, 1, x.length-3 );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ssorthp@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var discreteUniform = require( '@stdlib/random-base-discrete-uniform' ).factory;
+var filledarrayBy = require( '@stdlib/array-filled-by' );
+var ssorthp = require( '@stdlib/blas-ext-base-ssorthp' );
 
-var rand;
-var sign;
-var x;
-var i;
+var rand = discreteUniform( -100, 100 );
+var x = filledarrayBy( 10, 'float32', rand );
 
-x = new Float32Array( 10 );
-for ( i = 0; i < x.length; i++ ) {
-    rand = round( randu()*100.0 );
-    sign = randu();
-    if ( sign < 0.5 ) {
-        sign = -1.0;
-    } else {
-        sign = 1.0;
-    }
-    x[ i ] = sign * rand;
-}
 console.log( x );
 
 ssorthp( x.length, -1.0, x, -1 );
 console.log( x );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -316,7 +282,7 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/blas-ext-base-ssorthp/main/LICENSE
 
-[@stdlib/array/float32]: https://github.com/stdlib-js/array-float32/tree/umd
+[@stdlib/array/float32]: https://github.com/stdlib-js/array-float32
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
@@ -326,11 +292,11 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/blas/ext/base/dsorthp]: https://github.com/stdlib-js/blas-ext-base-dsorthp/tree/umd
+[@stdlib/blas/ext/base/dsorthp]: https://github.com/stdlib-js/blas-ext-base-dsorthp
 
-[@stdlib/blas/ext/base/gsorthp]: https://github.com/stdlib-js/blas-ext-base-gsorthp/tree/umd
+[@stdlib/blas/ext/base/gsorthp]: https://github.com/stdlib-js/blas-ext-base-gsorthp
 
-[@stdlib/blas/ext/base/ssort2hp]: https://github.com/stdlib-js/blas-ext-base-ssort2hp/tree/umd
+[@stdlib/blas/ext/base/ssort2hp]: https://github.com/stdlib-js/blas-ext-base-ssort2hp
 
 <!-- </related-links> -->
 
