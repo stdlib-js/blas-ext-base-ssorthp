@@ -60,7 +60,7 @@
     "@stdlib/assert-is-browser": "^0.2.2",
     "@stdlib/blas-base-scopy": "^0.2.2",
     "@stdlib/math-base-assert-is-negative-zerof": "^0.1.3",
-    "@stdlib/math-base-special-pow": "^0.2.1",
+    "@stdlib/math-base-special-pow": "^0.3.0",
     "@stdlib/random-base-discrete-uniform": "^0.2.1",
     "@stdlib/random-base-randu": "^0.2.1",
     "@stdlib/random-base-uniform": "^0.2.1",
