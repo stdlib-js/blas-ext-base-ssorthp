@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2024-12-01)
+## Unreleased (2024-12-18)
 
 <section class="commits">
 
@@ -12,6 +12,7 @@
 
 <details>
 
+-   [`8bf8285`](https://github.com/stdlib-js/stdlib/commit/8bf8285aba0ecbd00ae145c4c5c098cd28135814) - **chore:** minor clean-up _(by Philipp Burckhardt)_
 -   [`272ae7a`](https://github.com/stdlib-js/stdlib/commit/272ae7ac5c576c68cfab1b6e304c86407faa20cd) - **docs:** remove comment _(by Athan Reines)_
 
 </details>
@@ -24,9 +25,10 @@
 
 ### Contributors
 
-A total of 1 person contributed to this release. Thank you to this contributor:
+A total of 2 people contributed to this release. Thank you to the following contributors:
 
 -   Athan Reines
+-   Philipp Burckhardt
 
 </section>
 
@@ -47,7 +49,7 @@ A total of 1 person contributed to this release. Thank you to this contributor:
 <details>
 
 -   [`d04dcbd`](https://github.com/stdlib-js/stdlib/commit/d04dcbd6dc3b0bf4a89bd3947d317fa5ff15bb38) - **docs:** remove private annotations in C comments _(by Philipp Burckhardt)_
--   [`726cca7`](https://github.com/stdlib-js/stdlib/commit/726cca7d78896f87428818a08ac788e5f3ed5be0) - **refactor:** update `blas/ext/base/ssorthp` to follow current project conventions _(by naveen, Praveen Kumar, Philipp Burckhardt)_
+-   [`726cca7`](https://github.com/stdlib-js/stdlib/commit/726cca7d78896f87428818a08ac788e5f3ed5be0) - **refactor:** update `blas/ext/base/ssorthp` to follow current project conventions _(by Naveen Kumar, Praveen Kumar, Philipp Burckhardt)_
 
 </details>
 
@@ -61,9 +63,9 @@ A total of 1 person contributed to this release. Thank you to this contributor:
 
 A total of 3 people contributed to this release. Thank you to the following contributors:
 
+-   Naveen Kumar
 -   Philipp Burckhardt
 -   Praveen Kumar
--   naveen
 
 </section>
 
