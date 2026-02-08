@@ -42,7 +42,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import ssorthp from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ssorthp@esm/index.mjs';
+import ssorthp from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ssorthp@v0.2.3-esm/index.mjs';
 ```
 
 #### ssorthp( N, order, x, stride )
@@ -153,7 +153,7 @@ ssorthp.ndarray( 3, 1.0, x, 1, x.length-3 );
 
 var discreteUniform = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform' ).factory;
 import filledarrayBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-filled-by@esm/index.mjs';
-import ssorthp from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ssorthp@esm/index.mjs';
+import ssorthp from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ssorthp@v0.2.3-esm/index.mjs';
 
 var rand = discreteUniform( -100, 100 );
 var x = filledarrayBy( 10, 'float32', rand );
