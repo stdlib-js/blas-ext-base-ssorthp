@@ -2,6 +2,40 @@
 
 > Package changelog.
 
+<section class="release" id="unreleased">
+
+## Unreleased (2026-03-12)
+
+<section class="commits">
+
+### Commits
+
+<details>
+
+-   [`3fc0d14`](https://github.com/stdlib-js/stdlib/commit/3fc0d14a4d2c612972f412dc76ceca1f056f0207) - **bench:** refactor to use string interpolation in `blas/ext/base/ssorthp` [(#10896)](https://github.com/stdlib-js/stdlib/pull/10896) _(by Partha Das)_
+
+</details>
+
+</section>
+
+<!-- /.commits -->
+
+<section class="contributors">
+
+### Contributors
+
+A total of 1 person contributed to this release. Thank you to this contributor:
+
+-   Partha Das
+
+</section>
+
+<!-- /.contributors -->
+
+</section>
+
+<!-- /.release -->
+
 <section class="release" id="v0.2.3">
 
 ## 0.2.3 (2026-02-08)
